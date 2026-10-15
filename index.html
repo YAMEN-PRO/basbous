@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <!-- إعدادات أساسية: ترميز الحروف العربية وملاءمة الموبايل -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>بسبوس الشامي 🐾 أبو المخالب</title>
+  <meta name="description" content="قبضاي الحارة وحلّال المشاكل… وصانع نصّها! رضاك يا أمي ❤️">
+
+  <!-- معاينة الرابط لما ينبعت على واتساب وإنستغرام وغيرهم -->
+  <meta property="og:title" content="بسبوس الشامي 🐾 أبو المخالب">
+  <meta property="og:description" content="قبضاي الحارة وحلّال المشاكل… وصانع نصّها! رضاك يا أمي ❤️">
+  <meta property="og:image" content="share.jpg">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#2a0f0a">
+
+  <!-- الخطوط العربية من Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800&family=Lalezar&display=swap" rel="stylesheet">
+
+  <style>
+    /* الألوان كلها بمكان واحد، إذا بدك تغيّر لون غيّره هون بس */
+    :root {
+      --bg-1: #1e0a07;
+      --bg-2: #4a1a10;
+      --gold: #f6c75a;
+      --gold-soft: #ffe2a0;
+      --cream: #fff4e3;
+      --red: #b3161f;
+      --card: rgba(255, 244, 227, 0.07);
+      --card-border: rgba(246, 199, 90, 0.35);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      min-height: 100vh;
+      font-family: "Cairo", system-ui, sans-serif;
+      color: var(--cream);
+      background:
+        radial-gradient(circle at 50% 0%, rgba(214, 128, 44, 0.35), transparent 60%),
+        linear-gradient(180deg, var(--bg-2), var(--bg-1));
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      padding: 0 16px 40px;
+    }
+
+    /* نقشة النجوم الشامية الخفيفة بالخلفية */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.07;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23f6c75a' stroke-width='2'%3E%3Crect x='22' y='22' width='36' height='36'/%3E%3Crect x='22' y='22' width='36' height='36' transform='rotate(45 40 40)'/%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .page { width: 100%; max-width: 480px; position: relative; }
+
+    /* البانر فوق */
+    .banner {
+      width: calc(100% + 32px);
+      margin: 0 -16px;
+      display: block;
+      height: auto;
+      border-bottom: 3px solid var(--gold);
+      border-radius: 0 0 22px 22px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    /* العنوان مخفي عن العين بس موجود لمحركات البحث (لأنو الاسم مكتوب بالبانر) */
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; overflow: hidden;
+      clip: rect(0 0 0 0); white-space: nowrap;
+    }
+
+    /* صورة البروفايل الدائرية */
+    .avatar {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      border: 4px solid var(--gold);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      display: block;
+      margin: -64px auto 12px;
+      object-fit: cover;
+      background: var(--bg-2);
+    }
+
+    h1 {
+      font-family: "Lalezar", "Cairo", sans-serif;
+      font-weight: 400;
+      font-size: 42px;
+      line-height: 1.2;
+      text-align: center;
+      color: var(--gold);
+      text-shadow: 0 3px 0 #3a0e08, 0 6px 18px rgba(0, 0, 0, 0.5);
+    }
+
+    .subtitle {
+      text-align: center;
+      font-weight: 800;
+      font-size: 20px;
+      color: var(--gold-soft);
+      margin-top: 2px;
+    }
+
+    .bio {
+      text-align: center;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 1.8;
+      opacity: 0.92;
+      margin: 22px auto 26px;
+      max-width: 36ch;
+    }
+
+    /* شريط رضاك يا أمي */
+    .ribbon {
+      display: block;
+      width: fit-content;
+      margin: 18px auto 26px;
+      padding: 8px 34px;
+      background: var(--red);
+      color: #fff;
+      font-weight: 800;
+      font-size: 20px;
+      clip-path: polygon(0 0, 100% 0, 94% 50%, 100% 100%, 0 100%, 6% 50%);
+      box-shadow: inset 0 0 0 2px var(--gold);
+    }
+
+    /* الأزرار */
+    .links { display: flex; flex-direction: column; gap: 14px; }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 18px;
+      border-radius: 16px;
+      background: var(--card);
+      border: 1.5px solid var(--card-border);
+      color: var(--cream);
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 17px;
+      backdrop-filter: blur(6px);
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    }
+    .btn:hover, .btn:focus-visible {
+      transform: translateY(-2px);
+      background: rgba(246, 199, 90, 0.14);
+      border-color: var(--gold);
+      outline: none;
+    }
+    .btn:active { transform: scale(0.98); }
+
+    .icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .icon svg { width: 24px; height: 24px; fill: #fff; }
+
+    .yt .icon { background: #ff0000; }
+    .tt .icon { background: #000; box-shadow: inset 0 0 0 1px #333; }
+    .ig .icon { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fd5949 45%, #d6249f 60%, #285aeb 90%); }
+    .mail .icon { background: var(--gold); }
+    .mail .icon svg { fill: #3a0e08; }
+
+    .btn .label { flex: 1; }
+    .btn .handle {
+      display: block;
+      font-weight: 600;
+      font-size: 13px;
+      opacity: 0.7;
+      direction: ltr;
+      text-align: right;
+    }
+    .arrow { opacity: 0.6; font-size: 20px; }
+
+    footer {
+      text-align: center;
+      margin-top: 34px;
+      font-size: 13px;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="page">
+    <img class="banner" src="banner.jpg" alt="بسبوس الشامي، أبو المخالب، رضاك يا أمي" width="1200" height="480">
+    <h1 class="sr-only">بسبوس الشامي - أبو المخالب</h1>
+
+    <p class="bio">وين في مشكلة بتلاقيني، ووين في مصيبة بكون أول الواصلين! 💪<br>
+      قبضاي الحارة وحلّال المشاكل… وصانع نصّها! 😎</p>
+
+    <!-- كل زر هو رابط. لتغيير رابط، غيّر الـ href بس -->
+    <nav class="links">
+      <a class="btn yt" href="https://www.youtube.com/@basbous.alshami" target="_blank" rel="noopener">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8zM9.6 15.6V8.4l6.3 3.6-6.3 3.6z"/></svg></span>
+        <span class="label">يوتيوب<span class="handle">@basbous.alshami</span></span>
+        <span class="arrow">‹</span>
+      </a>
+
+      <a class="btn tt" href="https://www.tiktok.com/@basbous.alshami" target="_blank" rel="noopener">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M16.6 5.8A4.3 4.3 0 0 1 15.5 3h-3.1v12.4a2.6 2.6 0 1 1-2.6-2.6c.3 0 .5 0 .8.1V9.7a5.8 5.8 0 1 0 5 5.7V9.1a7.4 7.4 0 0 0 4.4 1.4V7.4a4.3 4.3 0 0 1-3.4-1.6z"/></svg></span>
+        <span class="label">تيك توك<span class="handle">@basbous.alshami</span></span>
+        <span class="arrow">‹</span>
+      </a>
+
+      <a class="btn ig" href="https://www.instagram.com/basbous.alshami" target="_blank" rel="noopener">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.8.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 3.9 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zM12 0C8.7 0 8.3 0 7.1.1 2.7.3.3 2.7.1 7.1 0 8.3 0 8.7 0 12s0 3.7.1 4.9c.2 4.4 2.6 6.8 7 7 1.2.1 1.6.1 4.9.1s3.7 0 4.9-.1c4.4-.2 6.8-2.6 7-7 .1-1.2.1-1.6.1-4.9s0-3.7-.1-4.9c-.2-4.4-2.6-6.8-7-7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-11.8a1.4 1.4 0 1 0 0 2.9 1.4 1.4 0 0 0 0-2.9z"/></svg></span>
+        <span class="label">إنستغرام<span class="handle">@basbous.alshami</span></span>
+        <span class="arrow">‹</span>
+      </a>
+
+      <!-- غيّر الإيميل هون لما تعمل إيميل خاص لبسبوس -->
+      <a class="btn mail" href="mailto:basbous.alshami@gmail.com">
+        <span class="icon"><svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4.2-8 5-8-5V6l8 5 8-5v2.2z"/></svg></span>
+        <span class="label">للتعاون والإعلانات<span class="handle">basbous.alshami@gmail.com</span></span>
+        <span class="arrow">‹</span>
+      </a>
+    </nav>
+
+    <footer>© بسبوس الشامي · رضاك يا أمي</footer>
+  </main>
+</body>
+</html>
